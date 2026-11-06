@@ -1,44 +1,55 @@
-Exercise 11. When Do Matrices Commute?
+# Exercise 11 – When Do Matrices Commute?
 
-            First, calculate (AB) and (BA).
-            [
-            AB=\begin{pmatrix}
-            a+c&b+d\
-            c&d
-            \end{pmatrix}
-            ]
+## Question
 
-            [
-            BA=\begin{pmatrix}
-            a& a+b\
-            c&c+d
-            \end{pmatrix}
-            ]
+Given:
 
-            For (AB=BA), the corresponding entries must be equal.
+\[
+A=\begin{pmatrix}1&1\\0&1\end{pmatrix},
+\quad
+B=\begin{pmatrix}a&b\\c&d\end{pmatrix}
+\]
 
-            So we get:
+Find the conditions on a, b, c and d for which \(AB=BA\). Describe the general form of B.
 
-            [
-            c=0,\qquad d=a
-            ]
+## Solution
 
-            and
+First, calculate AB:
 
-            [
-            b=0
-            ]
+\[
+AB=\begin{pmatrix}a+c&b+d\\c&d\end{pmatrix}
+\]
 
-            Therefore, the conditions are (b=0,\ c=0,\ d=a).
+Now calculate BA:
 
-            The general form of B is:
+\[
+BA=\begin{pmatrix}a&a+b\\c&c+d\end{pmatrix}
+\]
 
-            [
-            B=\begin{pmatrix}
-            a&0\
-            0&a
-            \end{pmatrix}
-            =aI
-            ]
+For \(AB=BA\), corresponding entries must be equal:
 
-            So B must be a scalar multiple of the identity matrix.
+\[
+a+c=a \Rightarrow c=0
+\]
+
+\[
+b+d=a+b \Rightarrow d=a
+\]
+
+The remaining equations give the same condition.
+
+Therefore:
+
+\[
+c=0,\quad d=a
+\]
+
+The general form of B is:
+
+\[
+B=\begin{pmatrix}a&b\\0&a\end{pmatrix}
+\]
+
+where a and b can be any real numbers.
+
+Thus, \(AB=BA\) when B has this form.

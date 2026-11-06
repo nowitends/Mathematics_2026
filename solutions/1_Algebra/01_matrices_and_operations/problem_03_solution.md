@@ -1,21 +1,40 @@
-Exercise 3. When Can Matrices Be Multiplied?
+# Exercise 3 – When Can Matrices Be Multiplied?
 
-    Solution
+## Question
 
-    The sizes of the matrices are:
+The matrix sizes are:
 
-    * A = 2 × 3
-    * B = 3 × 4
-    * C = 4 × 2
-    * D = 2 × 2
+\[
+A_{2\times3},\quad B_{3\times4},\quad
+C_{4\times2},\quad D_{2\times2}
+\]
 
-    For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix.
+For the following products:
 
-    * AB: Defined. The sizes match (3 = 3), so the result is 2 × 4.
-    * BA: Not defined. The sizes do not match (4 ≠ 2).
-    * BC: Defined. The sizes match (4 = 4), so the result is 3 × 2.
-    * CB: Not defined. The sizes do not match (2 ≠ 3).
-    * AC: Not defined. The sizes do not match (3 ≠ 4).
-    * CA: Defined. The sizes match (2 = 2), so the result is 4 × 3.
-    * AD: Not defined. The sizes do not match (3 ≠ 2).
-    * DA: Defined. The sizes match (2 = 2), so the result is 2 × 3.
+\[
+AB,\ BA,\ BC,\ CB,\ AC,\ CA,\ AD,\ DA
+\]
+
+Determine whether each product is defined. If it is defined, find the size of the result.
+
+## Solution
+
+For matrix multiplication, the number of columns of the first matrix must be equal to the number of rows of the second matrix.
+
+1. \(AB\): \((2\times3)(3\times4)\) – Defined. Result: \(2\times4\).
+
+2. \(BA\): \((3\times4)(2\times3)\) – Not defined, because \(4\neq2\).
+
+3. \(BC\): \((3\times4)(4\times2)\) – Defined. Result: \(3\times2\).
+
+4. \(CB\): \((4\times2)(3\times4)\) – Not defined, because \(2\neq3\).
+
+5. \(AC\): \((2\times3)(4\times2)\) – Not defined, because \(3\neq4\).
+
+6. \(CA\): \((4\times2)(2\times3)\) – Defined. Result: \(4\times3\).
+
+7. \(AD\): \((2\times3)(2\times2)\) – Not defined, because \(3\neq2\).
+
+8. \(DA\): \((2\times2)(2\times3)\) – Defined. Result: \(2\times3\).
+
+The products \(AB\), \(BC\), \(CA\) and \(DA\) are defined. The other four products are not defined because their inner dimensions are different.

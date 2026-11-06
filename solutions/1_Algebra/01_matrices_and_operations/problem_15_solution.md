@@ -1,48 +1,74 @@
-### Exercise 15. Associativity of Multiplication and Different Calculation Paths
+# Exercise 15 – Associativity of Multiplication and Different Calculation Paths
 
-          Given
-          $$
-          A = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix}, \quad 
-          B = \begin{pmatrix} 1 & 0 \\ 2 & 1 \\ -1 & 3 \end{pmatrix}, \quad 
-          C = \begin{pmatrix} 2 & 1 \\ 0 & -1 \end{pmatrix}.
-          $$
+## Question
 
-          **1. Computing $(AB)C$:**
+Given:
 
-          First, let's find $AB$:
-          $$
-          AB = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 2 & 1 \\ -1 & 3 \end{pmatrix} 
-          = \begin{pmatrix} 1(1)+2(2)+0(-1) & 1(0)+2(1)+0(3) \\ 0(1)+1(2)+1(-1) & 0(0)+1(1)+1(3) \end{pmatrix} 
-          = \begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}
-          $$
+\[
+A=\begin{pmatrix}1&2&0\\0&1&1\end{pmatrix},
+\quad
+B=\begin{pmatrix}1&0\\2&1\\-1&3\end{pmatrix},
+\quad
+C=\begin{pmatrix}2&1\\0&-1\end{pmatrix}
+\]
 
-          Now, multiply $(AB)$ by $C$:
-          $$
-          (AB)C = \begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & -1 \end{pmatrix} 
-          = \begin{pmatrix} 5(2)+2(0) & 5(1)+2(-1) \\ 1(2)+4(0) & 1(1)+4(-1) \end{pmatrix} 
-          = \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix}
-          $$
+Calculate \((AB)C\) and \(A(BC)\). Compare the results and the number of intermediate operations. Explain associativity of matrix multiplication.
 
-          **2. Computing $A(BC)$:**
+## Solution
 
-          First, let's find $BC$:
-          $$
-          BC = \begin{pmatrix} 1 & 0 \\ 2 & 1 \\ -1 & 3 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 0 & -1 \end{pmatrix} 
-          = \begin{pmatrix} 1(2)+0(0) & 1(1)+0(-1) \\ 2(2)+1(0) & 2(1)+1(-1) \\ -1(2)+3(0) & -1(1)+3(-1) \end{pmatrix} 
-          = \begin{pmatrix} 2 & 1 \\ 4 & 1 \\ -2 & -4 \end{pmatrix}
-          $$
+First, calculate AB:
 
-          Now, multiply $A$ by $(BC)$:
-          $$
-          A(BC) = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 4 & 1 \\ -2 & -4 \end{pmatrix} 
-          = \begin{pmatrix} 1(2)+2(4)+0(-2) & 1(1)+2(1)+0(-4) \\ 0(2)+1(4)+1(-2) & 0(1)+1(1)+1(-4) \end{pmatrix} 
-          = \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix}
-          $$
+\[
+AB=
+\begin{pmatrix}
+1&2&0\\0&1&1
+\end{pmatrix}
+\begin{pmatrix}
+1&0\\2&1\\-1&3
+\end{pmatrix}
+=
+\begin{pmatrix}5&2\\1&4\end{pmatrix}
+\]
 
-          **3. Comparison and Explanation:**
+Then:
 
-          - **Results:** Both calculation paths give the exact same final matrix: $(AB)C = A(BC) = \begin{pmatrix} 10 & 3 \\ 2 & -3 \end{pmatrix}$.
-          - **Operation Count:** 
-            - Path 1 $((AB)C)$ computes a $(2 \times 2)$ matrix first, and then multiplies two $(2 \times 2)$ matrices.
-              - Path 2 $(A(BC))$ computes a $(3 \times 2)$ matrix first, which involves slightly more intermediate arithmetic operations.
-              - **Meaning of Associativity:** Associativity means that when we multiply three matrices together, the grouping (whether we calculate $(AB)$ first or $(BC)$ first) does not change the final result, as long as the order of matrices $(A, B, C)$ remains the same.
+\[
+(AB)C=
+\begin{pmatrix}5&2\\1&4\end{pmatrix}
+\begin{pmatrix}2&1\\0&-1\end{pmatrix}
+=
+\begin{pmatrix}10&3\\2&-3\end{pmatrix}
+\]
+
+Now calculate BC:
+
+\[
+BC=
+\begin{pmatrix}
+1&0\\2&1\\-1&3
+\end{pmatrix}
+\begin{pmatrix}2&1\\0&-1\end{pmatrix}
+=
+\begin{pmatrix}2&1\\4&1\\-2&-4\end{pmatrix}
+\]
+
+Then:
+
+\[
+A(BC)=
+\begin{pmatrix}1&2&0\\0&1&1\end{pmatrix}
+\begin{pmatrix}2&1\\4&1\\-2&-4\end{pmatrix}
+=
+\begin{pmatrix}10&3\\2&-3\end{pmatrix}
+\]
+
+Both results are equal:
+
+\[
+(AB)C=A(BC)=
+\begin{pmatrix}10&3\\2&-3\end{pmatrix}
+\]
+
+Each calculation path requires two matrix multiplications. The first path needs 20 scalar multiplications, while the second needs 24.
+
+This shows that matrix multiplication is associative. Changing the grouping does not change the final result, but it can change the amount of calculation.
