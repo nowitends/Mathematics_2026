@@ -2,28 +2,75 @@
 
 ## Question
 
-Without expanding the determinant, calculate:
+Given the matrix:
 
-\[
-\det\begin{pmatrix}
-2&4&1\\
-0&-3&5\\
-0&0&7
+$$
+A = \begin{pmatrix}
+2 & 4 & 1 \\
+0 & -3 & 5 \\
+0 & 0 & 7
 \end{pmatrix}
-\]
+$$
 
-State the rule for an arbitrary triangular matrix and explain it using this example.
+Compute the determinant without expanding it. State the rule for an arbitrary triangular matrix and explain it using this example.
 
 ## Solution
 
-For a triangular matrix, the determinant is the product of its diagonal entries.
+### 1. Determinant of the Matrix
 
-\[
-\det(A)=2\cdot(-3)\cdot7
-\]
+The given matrix is an upper triangular matrix because all entries below the main diagonal are zero.
 
-\[
-\det(A)=-42
-\]
+For a triangular matrix, the determinant is equal to the product of its main diagonal entries.
 
-Therefore, the determinant of a triangular matrix is equal to the product of its diagonal entries. In this example, the result is -42.
+Therefore:
+
+$$
+\det(A) = 2 \cdot (-3) \cdot 7
+$$
+
+$$
+\det(A) = -6 \cdot 7
+$$
+
+$$
+\boxed{\det(A) = -42}
+$$
+
+### 2. General Rule for Triangular Matrices
+
+The determinant of any upper or lower triangular matrix is equal to the product of its main diagonal entries.
+
+For an upper triangular matrix:
+
+$$
+A = \begin{pmatrix}
+a_{11} & * & * \\
+0 & a_{22} & * \\
+0 & 0 & a_{33}
+\end{pmatrix}
+$$
+
+For a lower triangular matrix:
+
+$$
+A = \begin{pmatrix}
+a_{11} & 0 & 0 \\
+
+* & a_{22} & 0 \\
+* & * & a_{33}
+    \end{pmatrix}
+    $$
+
+In both cases, the determinant is:
+
+$$
+\det(A) = a_{11} \cdot a_{22} \cdot a_{33}
+$$
+
+In this example, the diagonal entries are 2, -3 and 7. Their product gives -42.
+
+## Conclusion
+
+The determinant of the given upper triangular matrix is -42.
+
+This example confirms that the determinant of a triangular matrix is the product of its main diagonal entries. No determinant expansion is needed.

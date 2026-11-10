@@ -2,50 +2,82 @@
 
 ## Question
 
-Given the vectors:
+The vectors are:
 
-\[
-u=\begin{pmatrix}3\\1\end{pmatrix},
+$$
+u = \begin{pmatrix} 3 \\ 1 \end{pmatrix},
 \quad
-v=\begin{pmatrix}1\\4\end{pmatrix}
-\]
+v = \begin{pmatrix} 1 \\ 4 \end{pmatrix}
+$$
 
-Calculate the area of the parallelogram. Then reverse the order of the vectors and explain the changes.
+They span a parallelogram. Compute its area using a determinant. Then reverse the order of the vectors and explain what changes in the determinant and what does not change in the area.
 
 ## Solution
 
-Using the determinant:
+### 1. Calculating the Determinant
 
-\[
-\det(u,v)=
-\begin{vmatrix}
-3&1\\
-1&4
-\end{vmatrix}
-\]
+To calculate the area of the parallelogram, we use the determinant of the matrix formed by the two vectors:
 
-\[
-=3(4)-1(1)=11
-\]
+$$
+A = \begin{pmatrix}
+3 & 1 \\
+1 & 4
+\end{pmatrix}
+$$
+
+For a 2 × 2 matrix:
+
+$$
+\det(A) = ad - bc
+$$
+
+Substituting the values:
+
+$$
+\det(A) = 3 \cdot 4 - 1 \cdot 1
+$$
+
+$$
+\det(A) = 12 - 1 = 11
+$$
 
 The area is the absolute value of the determinant:
 
-\[
-Area=|11|=11
-\]
+$$
+\text{Area} = |11| = 11
+$$
 
-After reversing the vectors:
+### 2. Reversing the Order of the Vectors
 
-\[
-\det(v,u)=
-\begin{vmatrix}
-1&3\\
-4&1
-\end{vmatrix}
-\]
+After reversing the vectors, the matrix becomes:
 
-\[
-=1(1)-3(4)=-11
-\]
+$$
+B = \begin{pmatrix}
+1 & 3 \\
+4 & 1
+\end{pmatrix}
+$$
 
-The determinant changes its sign, but the area remains 11 because area is always positive.
+Its determinant is:
+
+$$
+\det(B) = 1 \cdot 1 - 3 \cdot 4
+$$
+
+$$
+\det(B) = 1 - 12 = -11
+$$
+
+The new area is:
+
+$$
+\text{Area} = |-11| = 11
+$$
+
+### 3. Conclusion
+
+Reversing the order of the vectors changes the sign of the determinant from 11 to -11.
+
+However, the area does not change because it is always the absolute value of the determinant.
+
+Therefore, the area of the parallelogram is 11 square units in both cases.
