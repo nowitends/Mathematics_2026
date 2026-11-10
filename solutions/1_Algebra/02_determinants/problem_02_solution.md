@@ -1,4 +1,4 @@
-#Exercise 2 - Determinant of a 3x3 Matrix
+# Exercise 2 - Determinant of a 3x3 Matrix
 
 ## Question
 
