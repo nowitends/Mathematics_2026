@@ -2,117 +2,114 @@
 
 ## Question
 
-Suppose that for a (3 \times 3) matrix:
+Suppose that for a $3 \times 3$ matrix:
 
 $$
-\det(A) = -4
+\det(A)=-4
 $$
 
 Compute:
 
 $$
-\det(2A), \quad \det(A^T), \quad \det(A^2), \quad \det(-A)
+\det(2A),\quad \det(A^T),\quad
+\det(A^2),\quad \det(-A).
 $$
 
 Justify each answer using the appropriate property.
 
-Solution
+## Solution
 
-### 1. Determinant of (2A)
+### 1. Determinant of $2A$
 
-For an (n \times n) matrix, multiplying the matrix by a scalar (k) multiplies its determinant by (k^n).
-
-Since (A) is a (3 \times 3) matrix:
+For an $n \times n$ matrix:
 
 $$
-\det(2A) = 2^3 \det(A)
+\det(kA)=k^n\det(A)
 $$
 
-Substituting the given determinant:
+Since $A$ is a $3 \times 3$ matrix:
 
 $$
-\det(2A) = 8 \cdot (-4)
+\det(2A)=2^3\det(A)
 $$
 
 $$
-\boxed{\det(2A) = -32}
+=8(-4)
+$$
+
+$$
+\boxed{\det(2A)=-32}
 $$
 
 ### 2. Determinant of the Transpose
 
 The determinant of a matrix is equal to the determinant of its transpose.
 
+$$
+\det(A^T)=\det(A)
+$$
+
 Therefore:
 
 $$
-\det(A^T) = \det(A)
+\boxed{\det(A^T)=-4}
 $$
 
-Since:
+### 3. Determinant of $A^2$
+
+Using the product property:
 
 $$
-\boxed{\det(A^T) = -4}
+\det(AB)=\det(A)\det(B)
 $$
 
-### 3. Determinant of (A^2)
-
-Using the determinant property for matrix multiplication:
+Since $A^2=A\cdot A$:
 
 $$
-\det(AB) = \det(A) \cdot \det(B)
-$$
-
-Since \(A^2\) means \(A \cdot A\):
-
-$$
-\det(A^2) = \det(A) \cdot \det(A)
+\det(A^2)=\det(A)\cdot\det(A)
 $$
 
 $$
-\det(A^2) = (-4) \cdot (-4)
+=(-4)(-4)
 $$
 
 $$
-\boxed{\det(A^2) = 16}
+\boxed{\det(A^2)=16}
 $$
 
-### 4. Determinant of (-A)
+### 4. Determinant of $-A$
 
-For an (n \times n) matrix:
-
-$$
-\det(kA) = k^n \det(A)
-$$
-
-Since (A) is a (3 \times 3) matrix:
+For an $n \times n$ matrix:
 
 $$
-\det(-A) = (-1)^3 \det(A)
+\det(kA)=k^n\det(A)
 $$
 
-Substituting:
+Since $A$ is a $3 \times 3$ matrix:
 
 $$
-\det(-A) = (-1) \cdot (-4)
+\det(-A)=(-1)^3\det(A)
 $$
 
 $$
-\boxed{\det(-A) = 4}
+=(-1)(-4)
 $$
 
-Conclusion
+$$
+\boxed{\det(-A)=4}
+$$
+
+## Conclusion
 
 The results are:
 
 $$
-\boxed{
 \begin{aligned}
-\det(2A) &= -32 \\
-\det(A^T) &= -4 \\
-\det(A^2) &= 16 \\
-\det(-A) &= 4
+\det(2A)&=-32\\
+\det(A^T)&=-4\\
+\det(A^2)&=16\\
+\det(-A)&=4
 \end{aligned}
-}
 $$
 
-Each result was obtained using determinant properties without calculating the determinant from scratch.
+All results were obtained using determinant properties without calculating the determinants from scratch.
