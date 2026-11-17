@@ -5,75 +5,55 @@
 Given:
 
 $$
-D=\begin{pmatrix}
+D=
+\begin{pmatrix}
 2&0&0\\
 0&-3&0\\
 0&0&5
-\end{pmatrix}
-$$
-
-$$
-E=\begin{pmatrix}
+\end{pmatrix},
+\qquad
+E=
+\begin{pmatrix}
 2&0&0\\
 0&0&0\\
 0&0&5
 \end{pmatrix}
 $$
 
-Decide which matrix is invertible. Find the inverse of the invertible matrix and check the result by multiplication.
+Without using Gauss-Jordan elimination, decide which matrix is invertible. For the invertible matrix, give the inverse and check the result by multiplication.
 
 ## Solution
 
-### 1. Check Matrix D
+### 1. Check Whether D Is Invertible
 
-A diagonal matrix is invertible if all diagonal elements are nonzero.
+A diagonal matrix is invertible if all its diagonal entries are non-zero.
 
-For matrix D:
+For matrix $D$, the diagonal entries are $2$, $-3$, and $5$.
 
-$$
-D=\begin{pmatrix}
-2&0&0\\
-0&-3&0\\
-0&0&5
-\end{pmatrix}
-$$
-
-All diagonal elements are nonzero.
-
-Therefore, D is invertible.
+All diagonal entries are non-zero, so $D$ is invertible.
 
 ### 2. Calculate the Inverse of D
 
-To find the inverse, take the reciprocal of each diagonal element.
-
-$$
-D^{-1}=
-\begin{pmatrix}
-\frac{1}{2}&0&0\\
-0&-\frac{1}{3}&0\\
-0&0&\frac{1}{5}
-\end{pmatrix}
-$$
+For a diagonal matrix, the inverse is found by taking the reciprocal of each diagonal entry.
 
 Therefore:
 
 $$
-\boxed{
 D^{-1}=
 \begin{pmatrix}
 \frac12&0&0\\
 0&-\frac13&0\\
 0&0&\frac15
 \end{pmatrix}
-}
 $$
 
-### 3. Check the Result
+### 3. Verify the Inverse of D
 
-Multiply D by its inverse:
+Multiply $D$ by $D^{-1}$:
 
 $$
-DD^{-1}=
+DD^{-1}
+=
 \begin{pmatrix}
 2&0&0\\
 0&-3&0\\
@@ -87,33 +67,29 @@ DD^{-1}=
 $$
 
 $$
+DD^{-1}
 =
 \begin{pmatrix}
 1&0&0\\
 0&1&0\\
 0&0&1
 \end{pmatrix}
+=I
 $$
 
-Therefore:
+The reverse multiplication also gives the identity matrix:
 
 $$
-\boxed{DD^{-1}=I}
+D^{-1}D=I
 $$
 
-### 4. Check Matrix E
+Therefore, the calculated inverse is correct.
 
-For matrix E:
+### 4. Check Whether E Is Invertible
 
-$$
-E=\begin{pmatrix}
-2&0&0\\
-0&0&0\\
-0&0&5
-\end{pmatrix}
-$$
+The diagonal entries of $E$ are $2$, $0$, and $5$.
 
-One diagonal element is zero.
+Since one diagonal entry is zero, $E$ is not invertible.
 
 Its determinant is:
 
@@ -121,18 +97,13 @@ $$
 \det(E)=(2)(0)(5)=0
 $$
 
-Since the determinant is zero, the inverse does not exist.
+A matrix with a zero determinant has no inverse.
 
-Therefore:
+### 5. Final Comparison
 
-$$
-\boxed{E^{-1}\text{ does not exist}}
-$$
+- Matrix $D$ is invertible because all its diagonal entries are non-zero.
+- Matrix $E$ is not invertible because one of its diagonal entries is zero.
 
-### 5. Conclusion
+**Conclusion**
 
-Matrix D is invertible because all diagonal elements are nonzero.
-
-Matrix E is not invertible because one diagonal element is zero.
-
-The inverse of D is correct because their product gives the identity matrix.
+Only matrix $D$ has an inverse. Its inverse is obtained by taking the reciprocal of each diagonal entry. Multiplication confirms that the result is the identity matrix. No Gauss-Jordan elimination is needed.

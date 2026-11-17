@@ -5,76 +5,71 @@
 Given:
 
 $$
-A=\begin{pmatrix}1&2\\0&1\end{pmatrix}
+A=
+\begin{pmatrix}
+1&2\\
+0&1
+\end{pmatrix},
+\qquad
+B=
+\begin{pmatrix}
+3&1\\
+2&4
+\end{pmatrix}
 $$
 
-$$
-B=\begin{pmatrix}3&1\\2&4\end{pmatrix}
-$$
-
-Solve the equation AX = B for X.
+Solve the equation $AX=B$ for $X$. Before calculating, decide on which side of the equation $A^{-1}$ must be used. Then check the result by computing $AX$.
 
 ## Solution
 
-### 1. Determine Which Side to Use
+### 1. Decide Where to Apply the Inverse
 
-The original equation is:
+We are given:
 
 $$
 AX=B
 $$
 
-Multiply both sides by A⁻¹ on the left:
+Since $A$ is on the left side of $X$, we must multiply both sides by $A^{-1}$ from the left.
 
 $$
-A^{-1}AX=A^{-1}B
+A^{-1}(AX)=A^{-1}B
 $$
 
-Since:
+Using the identity property:
 
 $$
-A^{-1}A=I
+IX=A^{-1}B
 $$
 
 Therefore:
 
 $$
-\boxed{X=A^{-1}B}
+X=A^{-1}B
 $$
 
-### 2. Calculate the Determinant
+### 2. Calculate the Inverse of A
+
+First, calculate the determinant:
 
 $$
-\det(A)=(1)(1)-(2)(0)
+\det(A)=(1)(1)-(2)(0)=1
 $$
 
-$$
-\boxed{\det(A)=1}
-$$
-
-Since the determinant is not zero, the inverse exists.
-
-### 3. Calculate the Inverse of A
-
-Using the inverse formula:
+Since the determinant is not zero, $A$ is invertible.
 
 $$
-A^{-1}=
+A^{-1}
+=
 \begin{pmatrix}
 1&-2\\
 0&1
 \end{pmatrix}
 $$
 
-### 4. Calculate X
+### 3. Calculate X
 
-Using:
-
-$$
-X=A^{-1}B
-$$
-
-Substitute the values:
+Using $X=A^{-1}B$:
 
 $$
 X=
@@ -106,9 +101,9 @@ X=
 }
 $$
 
-### 5. Verify the Result
+### 4. Verify the Result by Calculating AX
 
-Substitute X into the original equation:
+Substitute the calculated matrix $X$ into the original equation:
 
 $$
 AX=
@@ -136,17 +131,12 @@ AX=
 3&1\\
 2&4
 \end{pmatrix}
+=B
 $$
 
-This is equal to B.
+The result is equal to the given matrix $B$.
 
-Therefore:
-
-$$
-\boxed{AX=B}
-$$
-
-### 6. Conclusion
+**Conclusion**
 
 The solution is:
 
@@ -160,4 +150,4 @@ X=
 }
 $$
 
-The result is correct because multiplying A by X gives B.
+The inverse must be multiplied from the left because $A$ is on the left side of $X$. The verification confirms that $AX=B$.

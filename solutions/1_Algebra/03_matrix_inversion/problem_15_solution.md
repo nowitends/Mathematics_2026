@@ -2,89 +2,70 @@
 
 ## Question
 
-Given:
+For
 
 $$
-A=\begin{pmatrix}
+A=
+\begin{pmatrix}
 2&1\\
 1&3
-\end{pmatrix}
-$$
-
-$$
-b=\begin{pmatrix}
+\end{pmatrix},
+\qquad
+b=
+\begin{pmatrix}
 7\\
 8
 \end{pmatrix}
 $$
 
-Solve the system $Ax=b$ in two ways:
+solve $Ax=b$ in two ways:
 
-1. Using the inverse matrix.
+1. Using $A^{-1}b$.
 2. Using Gaussian elimination.
 
-Compare both solutions.
+Compare both solutions, the number of essential steps, and state which method was simpler in this example.
 
 ## Solution
 
-### 1. Calculate the Determinant
+### 1. Method 1: Using the Inverse Matrix
 
-For a 2x2 matrix:
-
-$$
-\det(A)=ad-bc
-$$
-
-Substituting the values:
+We start with:
 
 $$
-\det(A)=(2)(3)-(1)(1)
+Ax=b
 $$
 
-$$
-=6-1=5
-$$
-
-Therefore:
-
-$$
-\boxed{\det(A)=5}
-$$
-
-Since the determinant is not zero, the inverse exists.
-
-### 2. Solve Using the Inverse Matrix
-
-The inverse formula is:
-
-$$
-A^{-1}=\frac{1}{ad-bc}
-\begin{pmatrix}
-d&-b\\
--c&a
-\end{pmatrix}
-$$
-
-Substituting the values:
-
-$$
-A^{-1}=\frac{1}{5}
-\begin{pmatrix}
-3&-1\\
--1&2
-\end{pmatrix}
-$$
-
-Using:
+Multiplying both sides by $A^{-1}$ gives:
 
 $$
 x=A^{-1}b
 $$
 
-Substituting:
+First, calculate the determinant of A:
 
 $$
-x=\frac{1}{5}
+\det(A)=(2)(3)-(1)(1)=5
+$$
+
+Since the determinant is not zero, the inverse exists.
+
+Calculate the inverse:
+
+$$
+A^{-1}
+=
+\frac{1}{5}
+\begin{pmatrix}
+3&-1\\
+-1&2
+\end{pmatrix}
+$$
+
+Now calculate $x=A^{-1}b$:
+
+$$
+x=
+\frac{1}{5}
 \begin{pmatrix}
 3&-1\\
 -1&2
@@ -95,21 +76,12 @@ x=\frac{1}{5}
 \end{pmatrix}
 $$
 
-Multiplying:
-
 $$
-x=\frac{1}{5}
+x=
+\frac{1}{5}
 \begin{pmatrix}
 21-8\\
 -7+16
-\end{pmatrix}
-$$
-
-$$
-x=\frac{1}{5}
-\begin{pmatrix}
-13\\
-9
 \end{pmatrix}
 $$
 
@@ -119,13 +91,13 @@ $$
 \boxed{
 x=
 \begin{pmatrix}
-13/5\\
-9/5
+\frac{13}{5}\\
+\frac{9}{5}
 \end{pmatrix}
 }
 $$
 
-### 3. Solve Using Gaussian Elimination
+### 2. Method 2: Using Gaussian Elimination
 
 Start with the augmented matrix:
 
@@ -138,11 +110,7 @@ $$
 \right]
 $$
 
-Swap Row 1 and Row 2:
-
-$$
-R_1\leftrightarrow R_2
-$$
+First, swap the two rows:
 
 $$
 \left[
@@ -153,7 +121,7 @@ $$
 \right]
 $$
 
-Subtract 2 times Row 1 from Row 2:
+Subtract twice the first row from the second row:
 
 $$
 R_2\rightarrow R_2-2R_1
@@ -168,22 +136,22 @@ $$
 \right]
 $$
 
-Divide Row 2 by -5:
+Divide the second row by $-5$:
 
 $$
-R_2\rightarrow-\frac{1}{5}R_2
+R_2\rightarrow-\frac15R_2
 $$
 
 $$
 \left[
 \begin{array}{cc|c}
 1&3&8\\
-0&1&9/5
+0&1&\frac95
 \end{array}
 \right]
 $$
 
-Subtract 3 times Row 2 from Row 1:
+Subtract three times the second row from the first row:
 
 $$
 R_1\rightarrow R_1-3R_2
@@ -192,8 +160,8 @@ $$
 $$
 \left[
 \begin{array}{cc|c}
-1&0&13/5\\
-0&1&9/5
+1&0&\frac{13}{5}\\
+0&1&\frac95
 \end{array}
 \right]
 $$
@@ -204,48 +172,44 @@ $$
 \boxed{
 x=
 \begin{pmatrix}
-13/5\\
-9/5
+\frac{13}{5}\\
+\frac95
 \end{pmatrix}
 }
 $$
 
-### 4. Verify the Result
+### 3. Verify the Solution
 
-Substitute the solution into the original equation:
-
-$$
-Ax=b
-$$
+Both methods give the same solution:
 
 $$
+x=
+\begin{pmatrix}
+\frac{13}{5}\\
+\frac95
+\end{pmatrix}
+$$
+
+Substitute it into the original equation:
+
+$$
+Ax=
 \begin{pmatrix}
 2&1\\
 1&3
 \end{pmatrix}
 \begin{pmatrix}
-13/5\\
-9/5
+\frac{13}{5}\\
+\frac95
 \end{pmatrix}
 $$
 
 $$
 =
 \begin{pmatrix}
-26/5+9/5\\
-13/5+27/5
+\frac{26}{5}+\frac95\\
+\frac{13}{5}+\frac{27}{5}
 \end{pmatrix}
-$$
-
-$$
-=
-\begin{pmatrix}
-35/5\\
-40/5
-\end{pmatrix}
-$$
-
-$$
 =
 \begin{pmatrix}
 7\\
@@ -254,35 +218,41 @@ $$
 =b
 $$
 
-Thus:
-
-$$
-\boxed{Ax=b}
-$$
-
 The solution is correct.
 
-### 5. Compare the Methods
+### 4. Compare the Methods
 
-Both methods give the same solution.
+Both methods give the same answer, but their essential steps are different.
 
-- The inverse matrix method requires calculating the determinant and the inverse.
-- Gaussian elimination uses row operations directly.
+**Inverse matrix method:**
+1. Calculate the determinant.
+2. Find the inverse matrix.
+3. Multiply the inverse by the vector $b$.
 
-In this example, Gaussian elimination is simpler because it does not require calculating the inverse separately.
+This method requires three main calculation steps.
 
-### 6. Conclusion
+**Gaussian elimination method:**
+1. Swap the rows.
+2. Eliminate the first entry in the second row.
+3. Make the second pivot equal to one.
+4. Eliminate the second entry in the first row.
 
-Both methods give the same result:
+This method requires four main row operations.
+
+For this example, the inverse matrix method is slightly simpler because it requires fewer essential calculation steps.
+
+**Conclusion**
+
+Both methods give the same solution:
 
 $$
 \boxed{
 x=
 \begin{pmatrix}
-13/5\\
-9/5
+\frac{13}{5}\\
+\frac95
 \end{pmatrix}
 }
 $$
 
-Therefore, both methods are correct.
+The inverse matrix method is simpler in this particular example because it requires fewer essential steps. Gaussian elimination is also correct, but it requires more row operations here.
