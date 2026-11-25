@@ -1,13 +1,65 @@
-## Question
+# Exercise 7. Linear Dependence Without Heavy Computation
 
-For $u=(1,2,3)$, $v=(2,4,6)$, and $w=(0,1,1)$, identify a relation between $u,v$ and decide whether all three can be linearly independent.
+## Given Vectors
+
+We are given three vectors:
+
+$$
+u=(1,2,3)
+$$
+
+$$
+v=(2,4,6)
+$$
+
+$$
+w=(0,1,1)
+$$
+
+We need to find a relation between u and v and decide whether the three vectors are linearly independent.
 
 ## Solution
 
-Coordinate comparison immediately shows
+### 1. Finding the Relation
 
-$$v=2u,$$
+First, I compare the vectors u and v.
 
-or equivalently $2u-v+0w=0$. This is a nontrivial linear relation, so the set $\{u,v,w\}$ is linearly dependent regardless of $w$.
+We can see that every component of v is two times the corresponding component of u.
 
-No determinant or row reduction is needed: two proportional vectors already supply a dependence relation for the whole set.
+$$
+2u=2(1,2,3)
+$$
+
+$$
+2u=(2,4,6)
+$$
+
+Therefore:
+
+$$
+\boxed{v=2u}
+$$
+
+### 2. Checking Linear Independence
+
+Since v is already a multiple of u, these two vectors are linearly dependent.
+
+This means that the three vectors cannot be linearly independent.
+
+We do not need a long calculation because we already found a relation between two of the vectors.
+
+### 3. Explanation
+
+For a set of vectors to be linearly independent, none of the vectors should be a combination of the others in a non-trivial way.
+
+Here, v can be written as 2u, so the condition is not satisfied.
+
+## Conclusion
+
+The three vectors are linearly dependent because:
+
+$$
+v=2u
+$$
+
+Therefore, they cannot be linearly independent. No further calculation is needed.

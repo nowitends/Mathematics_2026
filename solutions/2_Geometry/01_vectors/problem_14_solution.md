@@ -1,23 +1,126 @@
-## Question
+# Exercise 14. Closest Point on a Line
 
-For $P=(4,1)$ and the line through the origin in direction $v=(1,2)$, find the closest point and distance using projection, and verify the relevant perpendicularity.
+## Given
+
+We are given a point:
+
+$$
+P=(4,1)
+$$
+
+The line passes through the origin and has direction:
+
+$$
+v=(1,2)
+$$
+
+We need to find the closest point on the line, calculate the distance, and check perpendicularity.
 
 ## Solution
 
-The closest point is the projection of $P$ onto the line:
+### 1. Finding the Closest Point
 
-$$Q=\operatorname{proj}_v P=\frac{P\cdot v}{v\cdot v}v=\frac65(1,2)=\left(\frac65,\frac{12}{5}\right).$$
+I use the projection formula:
 
-The displacement from the closest point to $P$ is
+$$
+Q=\operatorname{proj}_v P
+=\frac{P\cdot v}{v\cdot v}v
+$$
 
-$$P-Q=\left(\frac{14}{5},-\frac75\right),$$
+First, I calculate the dot products:
 
-so the distance is
+$$
+P\cdot v=4(1)+1(2)=6
+$$
 
-$$\|P-Q\|=\sqrt{\frac{196+49}{25}}=\frac{7}{\sqrt5}.$$
+$$
+v\cdot v=1^2+2^2=5
+$$
 
-The perpendicularity check is
+Now I substitute:
 
-$$(P-Q)\cdot v=\left(\frac{14}{5},-\frac75\right)\cdot(1,2)=\frac{14}{5}-\frac{14}{5}=0.$$
+$$
+Q=\frac65(1,2)
+$$
 
-Thus the displacement from $Q$ to $P$ is perpendicular to the line direction. A perpendicular segment is the shortest segment from a point to a line, so this also explains why $Q$ is the closest point.
+Therefore:
+
+$$
+\boxed{Q=\left(\frac65,\frac{12}{5}\right)}
+$$
+
+This is the closest point on the line.
+
+### 2. Calculating the Distance
+
+I calculate the difference between P and Q:
+
+$$
+P-Q=(4,1)-\left(\frac65,\frac{12}{5}\right)
+$$
+
+$$
+=\left(\frac{14}{5},-\frac75\right)
+$$
+
+Now I calculate its length:
+
+$$
+d=\sqrt{\left(\frac{14}{5}\right)^2+
+\left(-\frac75\right)^2}
+$$
+
+$$
+=\sqrt{\frac{196}{25}+\frac{49}{25}}
+$$
+
+$$
+=\sqrt{\frac{245}{25}}
+$$
+
+Therefore:
+
+$$
+\boxed{d=\frac{7\sqrt5}{5}}
+$$
+
+### 3. Checking Perpendicularity
+
+The vector from Q to P should be perpendicular to the direction of the line.
+
+I check the dot product:
+
+$$
+(P-Q)\cdot v
+$$
+
+$$
+=\left(\frac{14}{5},-\frac75\right)
+\cdot(1,2)
+$$
+
+$$
+=\frac{14}{5}-\frac{14}{5}
+$$
+
+$$
+=0
+$$
+
+The dot product is zero, so the vectors are perpendicular.
+
+## Conclusion
+
+The closest point on the line is:
+
+$$
+Q=\left(\frac65,\frac{12}{5}\right)
+$$
+
+The distance from P to the line is:
+
+$$
+d=\frac{7\sqrt5}{5}
+$$
+
+The perpendicularity check is also correct because the dot product equals zero.
