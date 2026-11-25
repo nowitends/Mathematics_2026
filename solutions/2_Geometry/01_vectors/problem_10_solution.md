@@ -1,19 +1,147 @@
-## Question
+# Exercise 10. Triangle Area from Vectors
 
-For $A=(0,0,0)$, $B=(2,1,0)$, $C=(1,3,2)$, use a cross product to find the parallelogram and triangle areas and explain the factor $1/2$.
+## Given Points
+
+We are given three points:
+
+$$
+A=(0,0,0)
+$$
+
+$$
+B=(2,1,0)
+$$
+
+$$
+C=(1,3,2)
+$$
+
+We need to construct AB and AC, calculate the area of the parallelogram using the cross product, and then find the area of the triangle.
 
 ## Solution
 
-The two sides from $A$ are
+### 1. Finding the Vectors AB and AC
 
-$$\overrightarrow{AB}=(2,1,0),\qquad \overrightarrow{AC}=(1,3,2).$$
+First, I subtract the coordinates of A from B:
 
-Their cross product is
+$$
+\overrightarrow{AB}=B-A
+$$
 
-$$\overrightarrow{AB}\times\overrightarrow{AC}=(2,-4,5),$$
+$$
+=(2-0,1-0,0-0)
+$$
 
-whose length is $\sqrt{4+16+25}=\sqrt{45}=3\sqrt5$. Therefore the parallelogram area is $3\sqrt5$ and the triangle area is
+$$
+\overrightarrow{AB}=(2,1,0)
+$$
 
-$$\frac12\,3\sqrt5=\frac{3\sqrt5}{2}.$$
+Now I calculate AC:
 
-The diagonal of a parallelogram made from the two side vectors divides it into two congruent triangles, which explains the factor $1/2$.
+$$
+\overrightarrow{AC}=C-A
+$$
+
+$$
+=(1-0,3-0,2-0)
+$$
+
+$$
+\overrightarrow{AC}=(1,3,2)
+$$
+
+### 2. Calculating the Cross Product
+
+I use the cross product:
+
+$$
+\overrightarrow{AB}\times\overrightarrow{AC}
+=
+\begin{vmatrix}
+i&j&k\\
+2&1&0\\
+1&3&2
+\end{vmatrix}
+$$
+
+Expanding the determinant:
+
+$$
+=(1\cdot2-0\cdot3,\,
+0\cdot1-2\cdot2,\,
+2\cdot3-1\cdot1)
+$$
+
+$$
+=(2,-4,5)
+$$
+
+### 3. Finding the Parallelogram Area
+
+The area of the parallelogram is the length of the cross product:
+
+$$
+A_p=|\overrightarrow{AB}\times\overrightarrow{AC}|
+$$
+
+$$
+=\sqrt{2^2+(-4)^2+5^2}
+$$
+
+$$
+=\sqrt{4+16+25}
+$$
+
+$$
+\boxed{A_p=\sqrt{45}=3\sqrt{5}}
+$$
+
+### 4. Finding the Triangle Area
+
+A triangle is half of a parallelogram with the same base and height.
+
+Therefore, I divide the parallelogram area by 2:
+
+$$
+A_t=\frac{1}{2}A_p
+$$
+
+$$
+A_t=\frac{1}{2}\cdot3\sqrt{5}
+$$
+
+$$
+\boxed{A_t=\frac{3\sqrt{5}}{2}}
+$$
+
+### 5. Geometrical Explanation
+
+The cross product gives the area of the parallelogram formed by the two vectors.
+
+The triangle uses the same base and height, but its area is half of the parallelogram.
+
+## Conclusion
+
+The vectors are:
+
+$$
+\overrightarrow{AB}=(2,1,0)
+$$
+
+$$
+\overrightarrow{AC}=(1,3,2)
+$$
+
+The parallelogram area is:
+
+$$
+\boxed{3\sqrt{5}}
+$$
+
+The triangle area is:
+
+$$
+\boxed{\frac{3\sqrt{5}}{2}}
+$$
+
+We divide by 2 because the triangle is half of the parallelogram.

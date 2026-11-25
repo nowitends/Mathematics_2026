@@ -1,19 +1,125 @@
-## Question
+# Exercise 13. Do Four Points Lie in One Plane?
 
-For $A=(0,0,0)$, $B=(1,2,0)$, $C=(0,1,1)$, and $D=(2,5,1)$, use a cross product and scalar triple-product check to decide whether the four points are coplanar.
+## Given Points
+
+We are given four points:
+
+$$
+A=(0,0,0)
+$$
+
+$$
+B=(1,2,0)
+$$
+
+$$
+C=(0,1,1)
+$$
+
+$$
+D=(2,5,1)
+$$
+
+We need to check if all four points lie in the same plane.
 
 ## Solution
 
-The in-plane candidates are
+### 1. Constructing AB and AC
 
-$$\overrightarrow{AB}=(1,2,0),\qquad \overrightarrow{AC}=(0,1,1).$$
+First, I calculate AB:
 
-Their cross product is
+$$
+\overrightarrow{AB}=B-A
+$$
 
-$$n=\overrightarrow{AB}\times\overrightarrow{AC}=(2,-1,1).$$
+$$
+=(1,2,0)
+$$
 
-Also $\overrightarrow{AD}=(2,5,1)$. I compute
+Now I calculate AC:
 
-$$\overrightarrow{AD}\cdot n=2\cdot2+5(-1)+1\cdot1=4-5+1=0.$$
+$$
+\overrightarrow{AC}=C-A
+$$
 
-Since this value is zero, $\overrightarrow{AD}$ is perpendicular to the normal, so $D$ lies in the plane through $A,B,C$. The criterion is that a displacement within the plane must have zero dot product with its normal.
+$$
+=(0,1,1)
+$$
+
+### 2. Finding the Normal Vector
+
+I calculate the cross product:
+
+$$
+n=\overrightarrow{AB}\times\overrightarrow{AC}
+$$
+
+$$
+=
+\begin{vmatrix}
+i&j&k\\
+1&2&0\\
+0&1&1
+\end{vmatrix}
+$$
+
+Expanding the determinant:
+
+$$
+n=(2(1)-0(1),
+0(0)-1(1),
+1(1)-2(0))
+$$
+
+Therefore:
+
+$$
+\boxed{n=(2,-1,1)}
+$$
+
+### 3. Constructing AD and Checking the Dot Product
+
+First, I calculate AD:
+
+$$
+\overrightarrow{AD}=D-A
+$$
+
+$$
+=(2,5,1)
+$$
+
+Now I check the dot product with the normal vector:
+
+$$
+\overrightarrow{AD}\cdot n
+=2(2)+5(-1)+1(1)
+$$
+
+$$
+=4-5+1
+$$
+
+$$
+\boxed{\overrightarrow{AD}\cdot n=0}
+$$
+
+### 4. Checking if D Lies in the Plane
+
+The dot product is zero, which means AD is perpendicular to the normal vector.
+
+Therefore, AD lies in the plane determined by A, B and C.
+
+So point D also lies in the same plane.
+
+## Conclusion
+
+Since:
+
+$$
+\overrightarrow{AD}\cdot n=0
+$$
+
+point D belongs to the plane determined by A, B and C.
+
+Therefore, all four points lie in the same plane.
